@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <title>文档标题</title>
+  <style type="text/css">
+  html,
+  body {
+    text-align: center;
+    height: 100%;
+  }
+
+  .wrap {
+    height: 100%;
+  }
+
+/*  hamburger button*/
+    .button {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform: translate(-50%,-50%);
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .btn-inner {
+      position: relative;
+      display: inline-block;
+      width: 25px;
+      height: 3px;
+      background-color: #ccc;
+      border-radius: 3px;
+    }
+    .btn-inner::after,
+    .btn-inner::before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background-color: #ccc;
+      border-radius: 3px;
+      transition: all .5s ;
+      left: 0;
+    }
+    .btn-inner::before {
+      top: -10px;
+    }
+    .btn-inner::after {
+      top: 10px;
+    }
+
+     .button:hover .btn-inner {
+      background: transparent;
+    }
+    .button:hover .btn-inner::after {
+       transform: translateY(-10px) rotate(45deg);
+
+    }
+    .button:hover .btn-inner::before {
+      transform: translateY(10px) rotate(-45deg);
+    }
+
+    
+
+   /* triangle style*/
+    .l-box {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-100%);
+      width: 200px;
+      height: 200px;
+      vertical-align: middle;
+    }
+
+    .regular-triangle {
+       opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0; 
+      overflow: hidden;
+      width: 173.205081px;
+      height: 200px;/*regular-triangle l-box-item的高和clip的宽相等*/
+      transform-origin: 0 100%;
+      transform: rotate(0deg) skewY(-30deg) translate(10%,-10%);
+      transition: all .5s ease ;
+    }
+    
+    .clip {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 200px;
+      height: 173.205081px;
+      transform-origin: 0 0;
+      transform: skewY(30deg) rotate(30deg);
+      background: #ffdce1;
+    }
+
+    .clip a {
+     display: inline-block;
+     position: relative;
+     top: -60px;
+     left: -20px;
+      
+    }
+
+    .button:hover ~ .regular-triangle{
+        opacity: 1;
+    }
+
+    .button:hover ~ .l-box-item:nth-child(1) {
+        transform: rotate(0deg) skewY(-30deg) translate(10%,-10%);
+        /*重新设置了transform的属性时必须加上之前设置的skewY(-30deg)，否则之前设置的属性被覆盖掉*/
+    }
+
+    .button:hover ~ .l-box-item:nth-child(2) {
+
+        transform: rotate(60deg) skewY(-30deg) translate(10%,-10%);
+    }
+
+    .button:hover ~ .l-box-item:nth-child(3) {
+        transform: rotate(120deg) skewY(-30deg) translate(10%,-10%);
+    }
+
+    .button:hover ~ .l-box-item:nth-child(4) {
+        transform: rotate(180deg) skewY(-30deg) translate(10%,-10%);
+    }
+
+    .button:hover ~ .l-box-item:nth-child(5) {
+        transform: rotate(240deg) skewY(-30deg) translate(10%,-10%);
+    }
+
+    .button:hover ~ .l-box-item:nth-child(6) {
+        transform: rotate(300deg) skewY(-30deg) translate(10%,-10%);
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+      <div class="l-box">
+        <div class="button">
+          <span class="btn-inner"></span>
+        </div>
+        <div class="regular-triangle l-box-item">
+            <div class="clip">
+                <a href="#">
+                    <img src="image/xiaolang.jpg" alt="bg">
+                    <h1>Title</h1>
+                    <p>content</p>
+                </a>
+            </div>
+        </div>
+        <div class="regular-triangle l-box-item">
+            <div class="clip">
+                <a href="#">
+                    <img src="image/xiaolang.jpg" alt="bg">
+                    <h1>Title</h1>
+                    <p>content</p>
+
+                </a>
+            </div>
+        </div>
+        <div class="regular-triangle l-box-item">
+            <div class="clip">
+                <a href="#">
+                    <img src="image/xiaolang.jpg" alt="bg">
+                    <h1>Title</h1>
+                    <p>content</p>
+                </a>
+            </div>
+        </div>
+        <div class="regular-triangle l-box-item">
+            <div class="clip">
+                <a href="#">
+                    <img src="image/xiaolang.jpg" alt="bg">
+                    <h1>Title</h1>
+                    <p>content</p>
+                </a>
+            </div>
+        </div>
+        <div class="regular-triangle l-box-item">
+            <div class="clip">
+                <a href="#">
+                    <img src="image/xiaolang.jpg" alt="bg">
+                    <h1>Title</h1>
+                    <p>content</p>
+                </a>
+            </div>
+        </div>
+        <div class="regular-triangle l-box-item">
+            <div class="clip">
+                <a href="#">
+                    <img src="image/xiaolang.jpg" alt="bg">
+                    <h1>Title</h1>
+                    <p>content</p>
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+
+</body>
+<script type="text/javascript">
+  $(".button").click(function () {
+
+
+  })
+</script>
+</html>
